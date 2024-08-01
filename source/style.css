@@ -1,0 +1,332 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+    --cor-primaria: #1C2B32;
+    --cor-secundaria: #F16660;
+    --cor-secundaria-low-sat: #e6aaa6;
+    --cor-secundaria-hover: #d06763;
+    --cor-terciaria: #F7F4EF;
+    --cor-background: #f0f0f0;
+    --cor-background-header: #ffffff;
+    --cor-texto: #000000;
+    --cor-texto-secundario: #fff;
+    --cor-texto-terciario: #fff;
+    --cor-icones: #3a4951;
+    --cor-search: #ededed;
+    --cor-search-focus: #f8e7e6;
+    --cor-background-produto: #e4e4e4;
+    --cor-sellection: #e0b6b3;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bcbcbc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a6a9aa;
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: pointer;
+    background-color: #a6a9aa;
+}
+
+::selection {
+    background-color: var(--cor-sellection);
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    background-color: var(--cor-background);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    color: var(--cor-texto);
+    background-color: var(--cor-background-header);
+    position: relative;
+    justify-content: space-between;
+    height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    cursor: pointer;
+    border-radius: 12px;
+    width: 70px;
+    position: absolute;
+    left: 10px;
+    transition: background-color 0.25s;
+}
+
+.logo:hover {
+    background-color: #89170016;
+}
+
+.carrinho {
+    cursor: pointer;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    color: var(--cor-icones);
+    background-color: #00000000;
+    justify-content: center;
+    border-radius: 6px;
+    height: 30px;
+    width: 40px;
+    border: none;
+    transition: transform 0.1s, color 0.1s ease-in;
+}
+
+.carrinhoContainer {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.1s, color 0.1s ease-in;
+}
+
+.carrinhoContainer:hover .carrinho {
+    color: var(--cor-secundaria-hover);
+}
+
+.carrinhoContainer:active {
+    transform: scale(0.9);
+}
+
+.numeroDeItens {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-secundaria-low-sat);
+    position: absolute;
+    right: -2px;
+    transform: translateY(5px);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    color: var(--cor-icones);
+    pointer-events: none;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    border-radius: 32px;
+    padding: 10px 50px 10px 15px;
+    outline: none;
+    border: none;
+    height: 22px;
+    width: 250px;
+    background-color: var(--cor-search);
+    transition: box-shadow 0.2s ease-in-out, border-radius 0.2s ease-in-out, width 0.2s ease-in-out, background-color 0.2s; 
+}
+
+.search:hover {
+    background-color: #e0e0e0;
+    border-radius: 14px;
+}
+
+.search:focus {
+    border-radius: 14px;
+    width: 300px;
+    background-color: var(--cor-search-focus);
+    box-shadow: 0 0 8px var(--cor-search-focus);
+}
+
+.iconSearch {
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+    color: var(--cor-icones);
+    pointer-events: none;
+}
+
+header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
+    margin: 0 auto;
+}
+
+/* Slider */
+.slider {
+    width: 700px;
+    height: 325px;
+    position: relative;
+    transition: width 0.2s, height 0.2s;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.212);
+}
+  
+.slider img {
+    width: 700px;
+    height: 325px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: width 0.2s, height 0.2s;
+}
+  
+.slider img:first-child {
+    z-index: 0;
+}
+  
+.slider img:nth-child(2) {
+    z-index: 0;
+}
+
+.bar {
+    position: absolute;
+    background-color: #bf615e;
+    width: 5.5px;
+    border-radius: 5px;
+    height: 27px;
+    transform: translateX(-10px);
+}
+
+.topico {
+    display: flex;
+    align-items: center;
+    color: var(--cor-primaria);
+    font-size: 28px;
+    margin-left: 45px;
+}
+  
+/* Botões do slider */
+.navigation-button {
+    user-select: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin-left: 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+  
+.dot.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.produtos {
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+
+.produto {
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--cor-background-produto);
+    margin: 15px;
+}
+
+.descricaoProduto {
+    margin-top: 10px;
+    text-align: justify;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.precoProduto {
+    cursor: pointer;
+    color: var(--cor-icones);
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.precoProduto:hover {
+    color: var(--cor-secundaria-hover);
+}
+
+.precoProduto:hover .adicionarProduto {
+    color: var(--cor-secundaria-hover);
+}
+
+.adicionarProduto {
+    cursor: pointer;
+    color: var(--cor-icones);
+    background-color: #00000000;
+    font-weight: bold;
+    border: none;
+    transition: color 0.2s;
+}
+
+.imgProduto {
+    border-radius: 12px;
+    height: 270px;
+    width: 180px;
+    object-fit: cover;
+}
+
+footer {
+    height: 100px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 720px) {
+    .slider {
+      width: 450px;
+      height: 215px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  
+    .slider img {
+      width: 450px;
+      height: 215px;
+    }
+    
+    .dot {
+      height: 7px;
+      width: 7px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .slider {
+      width: 330px;
+      height: 160px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  
+    .slider img {
+      width: 330px;
+      height: 160px;
+    }
+  }
