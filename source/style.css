@@ -247,6 +247,7 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
 }
 
 .produtos {
+    height: 500px;
     margin-left: 20px;
     display: flex;
     align-items: center;
@@ -263,6 +264,12 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
     justify-content: center;
     background-color: var(--cor-background-produto);
     margin: 15px;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.258);
+    transition: transform 0.2s ease-in-out;
+}
+
+.produto:hover {
+    transform: scale(1.1);
 }
 
 .descricaoProduto {
