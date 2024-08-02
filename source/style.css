@@ -28,11 +28,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #bcbcbc;
     border-radius: 12px;
     border-width: 5px;
     border: 2px solid transparent;
     background-clip: padding-box;
+    transition: background-color 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -248,7 +248,7 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
 
 .produtos {
     height: 500px;
-    margin-left: 20px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
     overflow: auto;
@@ -273,13 +273,13 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
 }
 
 .descricaoProduto {
-    margin-top: 10px;
-    text-align: justify;
+    margin-top: 10px;   
     padding: 5px;
     border-radius: 8px;
 }
 
 .precoProduto {
+    user-select: none;
     cursor: pointer;
     color: var(--cor-icones);
     font-weight: bold;
@@ -305,7 +305,7 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
 }
 
 .imgProduto {
-    border-radius: 12px;
+    border-radius: 10px;
     height: 270px;
     width: 180px;
     object-fit: cover;
@@ -317,6 +317,44 @@ footer {
 
 /* Estilos responsivos */
 @media (max-width: 720px) {
+    .produtos {
+        margin-left: 0;
+        height: 410px;
+    }
+
+    .produto {
+        padding: 10px;
+    }
+
+    .topico {
+        margin-left: 30px;
+    }
+
+    .search {
+        width: 200px;
+    }
+    
+    .search:hover {
+        background-color: #e0e0e0;
+        border-radius: 14px;
+    }
+    
+    .search:focus {
+        border-radius: 14px;
+        width: 250px;
+        background-color: var(--cor-search-focus);
+        box-shadow: 0 0 8px var(--cor-search-focus);
+    }
+
+    .imgProduto {
+        width: 120px;
+        height: 180px;
+    }
+
+    .descricaoProduto {
+        font-size: 14px;
+    }
+
     .slider {
       width: 450px;
       height: 215px;
@@ -336,6 +374,21 @@ footer {
   }
   
   @media (max-width: 480px) {
+    .search {
+        width: 150px;
+    }
+    
+    .search:hover {
+        background-color: #e0e0e0;
+        border-radius: 14px;
+    }
+    
+    .search:focus {
+        border-radius: 14px;
+        width: 200px;
+        background-color: var(--cor-search-focus);
+        box-shadow: 0 0 8px var(--cor-search-focus);
+    }
     .slider {
       width: 330px;
       height: 160px;
