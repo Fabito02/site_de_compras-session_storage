@@ -343,14 +343,21 @@ footer {
 }
 
 .modalProduto .produtoTxt {
-    
+    padding-right: 15px;
+    margin: 0 auto;
+    max-width: 380px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: var(--cor-texto);
     margin-left: 20px;
 }
 
 .modalProduto .produtoPreco {
+    text-wrap: nowrap;
+    margin-right: 30px;
+    font-weight: bold;
     color: var(--cor-icones);
-    margin-left: 20px;
     margin-right: 10px;
 
 }
@@ -387,8 +394,8 @@ footer {
 }
 
 .modalProduto {
-    margin: 10px;
     justify-content: space-between;
+    margin: 10px;
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -405,14 +412,13 @@ footer {
 }
 
 .removerProduto {
+    cursor: pointer;
     color: var(--cor-secundaria);
     font-size: 20px;
-    margin-left: -110px;
     margin-right: 10px;
 }
 
 .removerProduto:hover {
-    cursor: pointer;
     color: var(--cor-secundaria-hover);
 }
 
