@@ -20,6 +20,7 @@
     --cor-descricao: #000000;
 }
 
+ /* tema dark e descrição das cores usadas*/
 [theme="dark"] {
     --cor-primaria: #F7F4EF; /* ajustado para manter tom próximo ao original */
     --cor-secundaria: #F16660; /* inalterado */
@@ -31,8 +32,8 @@
     --cor-texto: #ffffff;
     --cor-texto-secundario: #000000; /* ajustado para contraste adequado */
     --cor-texto-terciario: #000000; /* ajustado para contraste adequado */
-    --cor-icones: #f3fbff;
-    --cor-search: #2E2E2E;
+    --cor-icones: #f3fbff;  /* inalterado */
+    --cor-search: #2E2E2E; /* inalterado também */
     --cor-search-hover: rgb(84, 84, 84);
     --cor-search-focus: rgb(78, 57, 57);
     --cor-background-produto: #282828;
