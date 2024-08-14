@@ -415,7 +415,7 @@ footer {
 .removerProduto {
     cursor: pointer;
     color: var(--cor-secundaria);
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 10px;
 }
 
