@@ -149,6 +149,7 @@ header {
 }
 
 .search {
+    color: var(--cor-texto);
     border-radius: 32px;
     padding: 10px 50px 10px 15px;
     outline: none;
