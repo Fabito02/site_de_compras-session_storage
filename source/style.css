@@ -1,5 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
+/* Tema Light*/
 :root {
     --cor-primaria: #1C2B32;
     --cor-secundaria: #F16660;
@@ -20,25 +21,25 @@
     --cor-descricao: #000000;
 }
 
- /* tema dark e descrição das cores usadas*/
+ /* Tema Dark*/
 [theme="dark"] {
-    --cor-primaria: #F7F4EF; /* ajustado para manter tom próximo ao original */
-    --cor-secundaria: #F16660; /* inalterado */
-    --cor-secundaria-low-sat: #e6aaa6; /* inalterado */
-    --cor-secundaria-hover: #d06763; /* inalterado */
-    --cor-terciaria: #1C2B32; /* ajustado para manter tom próximo ao original */
+    --cor-primaria: #F7F4EF;
+    --cor-secundaria: #F16660;
+    --cor-secundaria-low-sat: #e6aaa6;
+    --cor-secundaria-hover: #d06763;
+    --cor-terciaria: #1C2B32;
     --cor-background: #121212;
     --cor-background-header: #1F1F1F;
     --cor-texto: #ffffff;
-    --cor-texto-secundario: #000000; /* ajustado para contraste adequado */
-    --cor-texto-terciario: #000000; /* ajustado para contraste adequado */
-    --cor-icones: #f3fbff;  /* inalterado */
-    --cor-search: #2E2E2E; /* inalterado também */
+    --cor-texto-secundario: #000000; 
+    --cor-texto-terciario: #000000;
+    --cor-icones: #f3fbff;
+    --cor-search: #2E2E2E;
     --cor-search-hover: rgb(84, 84, 84);
     --cor-search-focus: rgb(78, 57, 57);
     --cor-background-produto: #282828;
-    --cor-sellection: #e0b6b3; /* inalterado */
-    --cor-descricao: #ffffff; /* ajustado para contraste adequado */
+    --cor-sellection: #e0b6b3;
+    --cor-descricao: #ffffff;
 }
 
 ::selection {
