@@ -424,10 +424,15 @@ footer {
 }
 
 .closeModal {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #a9a9a949;
     cursor: pointer;
     color: var(--cor-secundaria);
-    top: 15px;
-    right: 20px;
+    top: 25px;
+    right: 30px;
     font-size: 26px;
     position: absolute;
 }
