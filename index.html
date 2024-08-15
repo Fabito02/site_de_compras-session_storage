@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="source/style.css">
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
-<body theme="dark">
+<body theme="">
     <div class="modal" id="modal" style="display: none;">
         <div class="carrinhoModal">
             <span class="closeModal" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
@@ -28,9 +28,12 @@
             <input type="text" class="search" placeholder="Buscar...">
             <i class="fa-solid fa-magnifying-glass iconSearch"></i>
         </div>
-        <div class="carrinhoContainer">
-            <button id="carrinho" class="carrinho" onclick="abrirModal()"><i class="fa-solid fa-cart-shopping"></i></button>
-            <div class="numeroDeItens" id="numItens"></div>
+            <div class="carrinhoContainer">
+        <button class="tema" onclick="trocarTema()" title="Tema do site"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                <div class="carrinhoIcone">
+                <button id="carrinho" class="carrinho" onclick="abrirModal()" title="Seu carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+                <div class="numeroDeItens" id="numItens"></div>
+            </div>
         </div>
     </header>
     <main>

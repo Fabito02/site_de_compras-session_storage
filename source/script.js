@@ -1,5 +1,7 @@
 const numItens = document.getElementById('numItens');
 const modalProdutos = document.getElementById('produtosCarrinho');
+const body = document.querySelector('body')
+var temaAtual = 'light'
 let numeroDeProdutos = 0;
 
 function salvar() {
@@ -8,6 +10,7 @@ function salvar() {
     
     sessionStorage.setItem('numItens', itens);
     sessionStorage.setItem('produtosCarrinho', produtos);
+    sessionStorage.setItem('theme', temaAtual)
 }
 
 function carregar() {
@@ -28,6 +31,18 @@ function carregar() {
     removeButtons.forEach(button => {
         button.onclick = function() { excluirProdutos(this); };
     });
+
+    temaAtual = sessionStorage.getItem('theme')
+
+    console.log(temaAtual)
+
+    if (temaAtual == "dark") {
+        body.setAttribute("theme", "dark")
+        temaAtual = "dark"
+    } else {
+        body.setAttribute("theme", "light")
+        temaAtual = "light"
+    }
 }
 
 document.addEventListener('DOMContentLoaded', carregar);
@@ -90,5 +105,16 @@ function excluirProdutos(produto){
     produto.parentElement.remove();
     numeroDeProdutos -= 1;
     numItens.innerHTML = numeroDeProdutos;
+    salvar();
+}
+
+function trocarTema() {
+    if (body.getAttribute("theme") === "dark") {
+        body.setAttribute("theme", "light")
+        temaAtual = "light"
+    } else {
+        body.setAttribute("theme", "dark")
+        temaAtual = "dark"
+    }
     salvar();
 }
