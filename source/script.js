@@ -12,22 +12,23 @@ function salvar() {
 
 function carregar() {
     modalProdutos.innerHTML = '';
-    numItens.innerHTML = '0';
 
-    if (sessionStorage.getItem('numItens') === null || sessionStorage.getItem('numItens') === '') {
-        numItens.innerHTML = '0';
-        return;
+    let itensSalvos = sessionStorage.getItem('numItens');
+    if (itensSalvos !== null && itensSalvos !== '') {
+        numeroDeProdutos = Number(itensSalvos);
+        numItens.innerHTML = numeroDeProdutos;
+    } else {
+        numeroDeProdutos = 0;
+        numItens.innerHTML = 0;
     }
-    
-    numItens.innerHTML = sessionStorage.getItem('numItens');
-    modalProdutos.innerHTML = sessionStorage.getItem('produtosCarrinho') || '';
+
+    modalProdutos.innerHTML = sessionStorage.getItem('produtosCarrinho');
 
     let removeButtons = document.querySelectorAll('.removerProduto');
     removeButtons.forEach(button => {
         button.onclick = function() { excluirProdutos(this); };
     });
 }
-
 
 document.addEventListener('DOMContentLoaded', carregar);
 
@@ -42,29 +43,36 @@ function fecharModal() {
     modal.style.display = "none";
 }
 
-function adicionarProduto(produto){
-    let descricaoProduto = produto.querySelector('div').textContent;
+document.addEventListener('click', function(event) {
+    if (!carrinhoModal.contains(event.target) && event.target === modal) {
+        fecharModal();
+    }
+});
+
+function adicionarProduto(produtoElem) {
+    let produto = produtoElem.closest('.produto');
+    let descricaoProduto = produto.querySelector('.descricaoProduto').textContent;
+    let imgProduto = produto.querySelector('img').src;
+    let precoProduto = produto.querySelector('.precoProduto').textContent;
+
     let novoProdutoContainer = document.createElement('div');
     let novoProdutoDescr = document.createElement('span');
     let novaImgProduto = document.createElement('img');
-    let imgProduto = produto.querySelector('img');
     let novoProdutoPreco = document.createElement('span');
-    let produtoPreco = produto.querySelector('span');
     let novoRemoveProduto = document.createElement('span');
     let i = document.createElement('i');
     
-    let srcDAImagem = imgProduto.src;
     numeroDeProdutos += 1;
     numItens.innerHTML = numeroDeProdutos;
-    novaImgProduto.src = srcDAImagem;
     
-    novoProdutoContainer.setAttribute('class','modalProduto');
+    novoProdutoContainer.className = 'modalProduto';
+    novaImgProduto.src = imgProduto;
     novoProdutoDescr.textContent = descricaoProduto;
-    novoProdutoPreco.textContent = produtoPreco.textContent;
-    novoProdutoDescr.setAttribute('class', 'produtoTxt');
-    novoProdutoPreco.setAttribute('class','produtoPreco');
-    novoRemoveProduto.setAttribute('class','removerProduto');
-    i.setAttribute('class', 'fa-solid fa-trash-can');
+    novoProdutoPreco.textContent = precoProduto;
+    novoProdutoDescr.className = 'produtoTxt';
+    novoProdutoPreco.className = 'produtoPreco';
+    novoRemoveProduto.className = 'removerProduto';
+    i.className = 'fa-solid fa-trash-can';
 
     novoProdutoContainer.appendChild(novaImgProduto);
     novoProdutoContainer.appendChild(novoProdutoDescr);
@@ -72,11 +80,8 @@ function adicionarProduto(produto){
     novoRemoveProduto.appendChild(i);
     novoProdutoContainer.appendChild(novoRemoveProduto);
 
-    if (modalProdutos.firstChild) {
-        modalProdutos.insertBefore(novoProdutoContainer, modalProdutos.firstChild);
-    } else {
-        modalProdutos.appendChild(novoProdutoContainer);
-    }
+    modalProdutos.insertBefore(novoProdutoContainer, modalProdutos.firstChild);
+
     novoRemoveProduto.onclick = function() { excluirProdutos(this); };
     salvar();
 }
