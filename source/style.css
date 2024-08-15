@@ -300,11 +300,15 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
     color: var(--cor-icones);
     font-weight: bold;
     margin-top: 10px;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s;
 }
 
 .precoProduto:hover {
     color: var(--cor-secundaria-hover);
+}
+
+.precoProduto:active {
+    transform: scale(0.9);
 }
 
 .precoProduto:hover .adicionarProduto {
@@ -329,6 +333,10 @@ header > *:not(.logo):not(.carrinhoContainer):not(.iconSearch) {
 
 footer {
     height: 100px;
+}
+
+.modal h1 {
+    user-select: none;
 }
 
 .modal {
