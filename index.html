@@ -15,38 +15,11 @@
         <div class="carrinhoModal">
             <span class="closeModal" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
             <h1>SEUS PRODUTOS</h1>
-            <div class="produtosCarrinho">
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória teste texto grande quando ele passa do tamanho da div</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
-                <div class="modalProduto">
-                    <img src="img/1.png"> <span class="produtoTxt">Descrição de teste aleatória</span><span class="produtoPreco">R$ 688</span> <span class="removerProduto"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
+
+            <div class="produtosCarrinho" id="produtosCarrinho">
+                <!-- aqui é onde os itens do carrinho vão ficar -->
             </div>
+
         </div>
     </div>
     <header id="topo">
@@ -57,7 +30,7 @@
         </div>
         <div class="carrinhoContainer">
             <button id="carrinho" class="carrinho" onclick="abrirModal()"><i class="fa-solid fa-cart-shopping"></i></button>
-            <div class="numeroDeItens" id="numItens">5</div>
+            <div class="numeroDeItens" id="numItens"></div>
         </div>
     </header>
     <main>
